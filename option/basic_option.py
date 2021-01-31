@@ -8,7 +8,7 @@ FilePath: \modify_module\option\basic_option.py
 '''
 import argparse
 import os
-import icecream as ic
+#import icecream as ic
 
 class BasciOption():
 
@@ -30,8 +30,8 @@ class BasciOption():
         self.parser.add_argument('--transform', type=bool, default=True)
 
         # self.parser.add_argument('--train_path', type=str, default=r'D:\研究生期间项目资料\Gaze-Estimation\code\modify_module\dataset\train\labels.txt')
-        self.parser.add_argument('--train_path', type=str, default=r'D:\研究生期间项目资料\Smart-wheelchair\code\cnn-lstm\labels.txt')
-        self.parser.add_argument('--val_path', type=str, default=r'D:\研究生期间项目资料\Gaze-Estimation\code\modify_module\dataset\val\labels.txt')
+        self.parser.add_argument('--train_path', type=str, default=r'D:\Program Files\Intelligent_Wheelchair\dataset\train\labels.txt')
+        self.parser.add_argument('--val_path', type=str, default=r'D:\Program Files\Intelligent_Wheelchair\dataset\val\labels.txt')
 
         if is_train == True:
             file_name = os.listdir('./')
@@ -52,7 +52,7 @@ class BasciOption():
             # test option
 
             self.parser.add_argument('--test_path', type=str,
-                                     default=r'D:\研究生期间项目资料\Gaze-Estimation\code\modify_module\dataset\test\labels.txt')
+                                     default=r'D:\Program Files\Intelligent_Wheelchair\dataset\test\labels.txt')
             self.parser.add_argument('--test_batch_size', type=int, default=1)
             file_name = os.listdir('./')
             # ic(file_name)
