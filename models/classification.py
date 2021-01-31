@@ -40,12 +40,12 @@ class CnnLstm(torch.nn.Module):
 
         # self.fc2 = nn.Linear(256, 2)  #[N,hidden,classes]
         # self.fc2 = nn.Linear(2560, 2)  #[N,hidden,classes]
-        self.fc2 = nn.Linear(2560, 1)  #[N,hidden,classes]
+        self.fc2 = nn.Linear(1536, 1)  #[N,hidden,classes]
 
     def forward(self, x_frame_concat):
         cnn_embed_seq = []
         print('debug input size :', x_frame_concat.size())  #[2, 10, 3, 50, 200] 当label.txt中只有一行的时候输出为 [10, 3, 50, 200]，后续就不太对
-        assert x_frame_concat.size(1) == 10, 'frame is not expect'
+        assert x_frame_concat.size(1) == 6, 'frame is not expect'
         for seq in range(x_frame_concat.size(1)):
             print(f'seq:{seq}')
             print(x_frame_concat[:,seq, :, :, :],x_frame_concat.size())
@@ -69,7 +69,7 @@ class CnnLstm(torch.nn.Module):
         # x = F.relu(self.fc2(x))
 
         # x = self.fc2(x.reshape([2, 2560]))
-        x = F.sigmoid(self.fc2(x.reshape([-1, 2560])))
+        x = F.sigmoid(self.fc2(x.reshape([2,1536])))
         print(f'fc2(x).shape: {x.size()}')
         return x
 

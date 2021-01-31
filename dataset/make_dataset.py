@@ -49,7 +49,7 @@ def generate(path):
 
 if __name__ == '__main__':
     # 看近处的物体为0 看远处的物体为1
-    #img_path = r'D:\pycharm\modify_module\dataset\train'
-    #img_path = r'D:\pycharm\modify_module\dataset\test'
-    img_path = r'D:\pycharm\modify_module\dataset\val'
+    img_path = r'D:\Program Files\Intelligent_Wheelchair\dataset\train'
+    #img_path = r'D:\Program Files\Intelligent_Wheelchair\dataset\test'
+    #img_path = r'D:\Program Files\Intelligent_Wheelchair\dataset\val'
     generate(img_path)
