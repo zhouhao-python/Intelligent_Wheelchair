@@ -3,7 +3,7 @@ import torch.nn as nn
 import torch.optim as optim
 import time
 import os
-import tqdm
+#import tqdm
 from torch.utils.data import Dataset
 from torchvision import transforms, datasets
 from PIL import Image
